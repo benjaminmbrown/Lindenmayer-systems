@@ -15,7 +15,7 @@ var Lsystem = function(axiom, ruleset) {
 
     }
 
-    this.display = function() {
+    this.generateLsystem = function() {
 
         this.count = 0;
 

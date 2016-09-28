@@ -13,6 +13,6 @@ function setup() {
 
 function draw() {
     background(51);
-    lSystem.display();
+    lSystem.generateLsystem();
 
 }
