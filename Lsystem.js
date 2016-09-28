@@ -1,6 +1,6 @@
 var Lsystem = function(axiom, ruleset) {
     this.axiom = axiom;
-    this.ruleset = r;
+    this.ruleset = ruleset;
     this.generation = 0;
 
 
