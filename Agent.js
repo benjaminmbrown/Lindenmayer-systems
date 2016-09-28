@@ -7,8 +7,8 @@ var Agent = function(todo,length,theta){
 	this.render = function(){
 		stroke(255);
 
-		for(var i = 0 i < this.todo.length; i++){
-			var c = this.todo.chartAt(i);
+		for(var i = 0 ;i < this.todo.length; i++){
+			var c = this.todo.charAt(i);
 
 			if(c==='F' || c==='G'){
 				line(0,0,this.length,0);
