@@ -1,45 +1,49 @@
-var Lsystem = function(axiom,ruleset){
-	this.axiom = axiom;
-	this.ruleset = r;
-	this.generation = 0;
+var Lsystem = function(axiom, ruleset) {
+    this.axiom = axiom;
+    this.ruleset = r;
+    this.generation = 0;
 
 
 
-	this.update = function(){
+    this.update = function() {
 
 
-	}
+    }
 
-	this.checkAgainstRules = function(){
+    this.checkAgainstRules = function() {
 
 
-	}
+    }
 
-	this.display = function(){	
-		
-		this.count = 0;
+    this.display = function() {
 
-		this.next = '';
-		for(var i =0; i < this.axiom.length ; i++){
-		  var c = this.axiom.charAt(i);
-		  if(c ==='A'){
-		  	this.next+='AB';
+        this.count = 0;
 
-		  }else if(c==='B'){
-		  	this.next+='A';
-		  }
-		}
-		this.axiom = this.next;
-		this.count++;
-		console.log(this.axiom);
-	}
+        this.next = '';
+        for (var i = 0; i < this.axiom.length; i++) {
 
-	this.getAxiom = function(){
-		return this.axiom;
+            var c = this.axiom.charAt(i);
+            for (var j = 0; j < this.ruleset.length; j++) {
+                var a = this.ruleset[j].getA();
 
-	}
+                if (a === c) {
+                    c = this.ruleset[j].getB();
+                    break;
+                }
+            }
+            this.next += c;
+        }
+        this.axiom = this.next;
+        this.count++;
+        console.log(this.axiom);
+    }
 
-	this.getGeneration = function(){
-		this.generation;
-	}
+    this.getAxiom = function() {
+        return this.axiom;
+
+    }
+
+    this.getGeneration = function() {
+        this.generation;
+    }
 }
